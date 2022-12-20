@@ -10,13 +10,13 @@ public:
     string Name;
     
     Human(string n, int age, int weight, int height){
-        this->Name = n;
-        this->Age = age;
-        this->Weight = weight;
-        this->Height = height;
+        Name = n;
+        Age = age;
+        Weight = weight;
+        Height = height;
     }
     Human(){
-        this->Name = DefaultName;
+        Name = DefaultName;
     }
 
     void change(string name){
@@ -40,11 +40,11 @@ class Student : public Human
 {
 public:
     vector<int> Marks;
-
-    Student(string name, int age, int weight, int height): Human (Name, Age, Weight, Height){}
+    Student(string name,int age, int weight, int height) : Human(name,  age,  weight,  height){}
     double DefinePrimaryRating(){
         int sum = 0;
         if(Name == DefaultName){
+            cout << "Lol kek";
             return 0;
         }
         sort(Marks.begin(),Marks.end());
@@ -68,7 +68,7 @@ public:
 
 
 int main(){
-    Student alex("Alex",18,60,170);
+    Student alex("Alex",16,60,170);
     alex.Marks = {1,2,3,4,5};
-    cout << alex.DefinePrimaryRating();
+    alex.DefinePrimaryRating();
 }
