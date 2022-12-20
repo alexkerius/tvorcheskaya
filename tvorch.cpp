@@ -44,7 +44,6 @@ public:
     double DefinePrimaryRating(){
         int sum = 0;
         if(Name == DefaultName){
-            cout << "Lol kek";
             return 0;
         }
         sort(Marks.begin(),Marks.end());
