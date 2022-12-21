@@ -49,13 +49,8 @@ public:
         }
 
         sort(Marks.begin(),Marks.end());
-        Marks.pop_back();
-        Marks.erase(Marks.begin());
         
-        for(int i = 0; i < Marks.size(); i++){
-            sum += Marks[i];
-        }
-        return sum/(Marks.size());
+        return (Marks[1]+Marks[2]+Marks[3])/3;
     }
 
     double DefineSecondaryRating(){
@@ -85,7 +80,12 @@ int main(){
     Student best("None",0,0,0);
     best.Marks = {0,0,0,0,0};
     for(int i = 0; i < 5; i++){
-        
+        if(students[i].DefinePrimaryRating() > best.DefinePrimaryRating()){
+            best = students[i];
+        }
+        else if(students[i].DefinePrimaryRating() == best.DefinePrimaryRating() && students[i].DefineSecondaryRating() > best.DefineSecondaryRating()){
+            best = students[i];
+        }
         
     }
     cout << "The best student is "<< best.Name;
